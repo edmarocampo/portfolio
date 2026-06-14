@@ -71,10 +71,10 @@ nav{position:sticky;top:0;z-index:300;background:rgba(5,14,31,.8);backdrop-filte
 .float-chip b{color:var(--cyan)}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 /* stats strip */
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:26px 0 6px;position:relative;z-index:2}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:26px 0 6px}
 .stat{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px 20px;text-align:center;transition:.3s;position:relative;overflow:hidden}
 .stat:hover{border-color:var(--bd2);transform:translateY(-4px)}
-.stat .n{font-family:'Plus Jakarta Sans',sans-serif;font-size:27px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.3;padding-bottom:2px;display:inline-block}
+.stat .n{font-family:'Plus Jakarta Sans',sans-serif;font-size:27px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat .l{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:5px}
 /* marquee */
 .mq{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);overflow:hidden;padding:15px 0;white-space:nowrap;background:rgba(8,26,51,.5);margin-top:34px}
@@ -93,8 +93,8 @@ section.alt{background:var(--bg2)}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 /* cards */
-.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:28px;transition:.35s cubic-bezier(.2,.7,.3,1.1);position:relative;overflow:visible}
-.card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(24,213,255,.1),transparent 65%);opacity:0;transition:.35s;pointer-events:none;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:28px;transition:.35s cubic-bezier(.2,.7,.3,1.1);position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(24,213,255,.1),transparent 65%);opacity:0;transition:.35s;pointer-events:none}
 .card:hover{transform:translateY(-6px);border-color:var(--bd2);box-shadow:0 22px 50px rgba(0,0,0,.4)}
 .card:hover::after{opacity:1}
 .card h3{font-size:17.5px;font-weight:700;margin-bottom:8px;color:#fff}
@@ -221,53 +221,13 @@ footer b{color:var(--cyan)}
 .term-q button{font-family:'Consolas',monospace;font-size:11px;padding:7px 13px;border-radius:8px;border:1px solid var(--bd);background:rgba(24,213,255,.06);color:var(--cyan);cursor:pointer;transition:.2s}
 .term-q button:hover{border-color:var(--cyan);background:rgba(24,213,255,.14);transform:translateY(-2px)}
 /* career dashboard */
-.dash-wrap{background:var(--card);border:1.5px solid var(--bd);border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-.dash-titlebar{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(24,213,255,.04);border-bottom:1px solid var(--bd)}
-.dash-titlebar span{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
-.dash-titlebar .dot{display:flex;gap:6px}.dash-titlebar .dot i{width:10px;height:10px;border-radius:50%}
-.dash-titlebar .dot i:nth-child(1){background:#FF5F57}.dash-titlebar .dot i:nth-child(2){background:#FEBC2E}.dash-titlebar .dot i:nth-child(3){background:#28C840}
-.dash-body{padding:22px}
-/* KPI cards row */
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.kpi{background:rgba(24,213,255,.04);border:1px solid var(--bd);border-radius:14px;padding:14px 16px;position:relative;overflow:hidden;transition:.3s}
-.kpi:hover{border-color:var(--bd2);transform:translateY(-3px)}
-.kpi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--grad);opacity:.7}
-.kpi .kv{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.kpi .kl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:6px}
-.kpi .kt{font-size:11px;color:var(--teal);margin-top:4px;font-weight:600}
-/* sparkline row */
-.spark-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
-.spark-card{background:rgba(8,26,51,.6);border:1px solid var(--bd);border-radius:14px;padding:16px}
-.spark-card h5{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
-.spark-bars{display:flex;align-items:flex-end;gap:5px;height:56px}
-.spark-bars .sb{flex:1;border-radius:4px 4px 0 0;background:var(--grad);opacity:.75;min-width:0;width:0;transition:height 1.2s cubic-bezier(.2,.7,.3,1),opacity .3s}
-.spark-bars .sb:hover{opacity:1}
-.spark-labels{display:flex;gap:5px;margin-top:6px}
-.spark-labels span{flex:1;font-size:8.5px;color:var(--dim);text-align:center;overflow:hidden;white-space:nowrap}
-/* radar-style skill meter */
-.skill-meters{display:flex;flex-direction:column;gap:9px}
-.smeter .sl{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px}
-.smeter .sl b{color:var(--text);font-weight:600}.smeter .sl em{color:var(--mut);font-style:normal;font-size:10.5px}
-.smeter .st{height:8px;border-radius:5px;background:rgba(140,175,230,.1);overflow:hidden}
-.smeter .sf{height:100%;width:0;border-radius:5px;transition:width 1.2s cubic-bezier(.2,.7,.3,1);box-shadow:0 0 10px rgba(24,213,255,.35)}
-.sf.c1{background:linear-gradient(90deg,#18D5FF,#6A5CFF)}
-.sf.c2{background:linear-gradient(90deg,#6A5CFF,#00C9A7)}
-.sf.c3{background:linear-gradient(90deg,#00C9A7,#4ADE80)}
-.sf.c4{background:linear-gradient(90deg,#F5D87A,#F5A623)}
-.sf.c5{background:linear-gradient(90deg,#18D5FF,#00C9A7)}
-/* personality metrics */
-.meter-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.ring-wrap{text-align:center;padding:14px 10px;background:rgba(8,26,51,.6);border:1px solid var(--bd);border-radius:14px;transition:.3s}
-.ring-wrap:hover{border-color:var(--bd2);transform:translateY(-3px)}
-.ring-wrap svg{width:64px;height:64px}
-.ring-wrap .rv{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:#fff}
-.ring-wrap .rl{font-size:10px;color:var(--dim);margin-top:5px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
-/* hbar kept for any residual */
-.hbar{margin-bottom:10px}
-.hbar .lbl{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px}
+.dash-card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+.dash-card h4{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+.hbar{margin-bottom:14px}
+.hbar .lbl{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
 .hbar .lbl b{color:#fff;font-weight:600}.hbar .lbl span{color:var(--gold);font-weight:700;font-family:'Plus Jakarta Sans',sans-serif}
-.hbar .trk{height:9px;border-radius:5px;background:rgba(140,175,230,.1);overflow:hidden}
-.hbar .fil{height:100%;width:0;border-radius:5px;background:var(--grad);transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.hbar .trk{height:11px;border-radius:6px;background:rgba(140,175,230,.1);overflow:hidden}
+.hbar .fil{height:100%;width:0;border-radius:6px;background:var(--grad);transition:width 1.1s cubic-bezier(.2,.7,.3,1);box-shadow:0 0 14px rgba(24,213,255,.4)}
 .hbar .fil.red{background:linear-gradient(90deg,#00C9A7,#4ADE80)}
 /* slicers */
 .slicers{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
@@ -275,107 +235,6 @@ footer b{color:var(--cyan)}
 .slicers button:hover{border-color:var(--cyan);color:var(--cyan)}
 .slicers button.on{background:rgba(24,213,255,.13);border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 18px rgba(24,213,255,.2)}
 .gi.hide{display:none}
-
-.dqr-row span:nth-child(3),.dqr-row span:nth-child(4){display:none}.dqr-row.hdr span:nth-child(3),.dqr-row.hdr span:nth-child(4){display:none}}
-
-
-}
-
-
-/* ── BI Analytics Report ── */
-.bi-report{background:#040F1E;border:1.5px solid rgba(24,213,255,.15);border-radius:18px;overflow:visible;box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 60px rgba(24,213,255,.05)}
-/* Topbar */
-.bi-topbar{display:flex;align-items:center;justify-content:space-between;padding:11px 22px;background:rgba(24,213,255,.04);border-bottom:1px solid rgba(24,213,255,.12);flex-wrap:wrap;gap:8px}
-.bi-tb-left{display:flex;align-items:center;gap:10px;font-size:12px;flex-wrap:wrap}
-.bi-logo{color:var(--cyan);font-size:16px}
-.bi-report-name{font-weight:700;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
-.bi-sep{color:rgba(140,175,230,.25)}
-.bi-workspace{color:var(--dim);font-size:11px}
-.bi-tb-right{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.bi-filter-chip{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(140,175,230,.2);color:var(--dim);cursor:pointer;transition:.2s;letter-spacing:.03em;user-select:none}
-.bi-filter-chip.active,.bi-filter-chip:hover{background:rgba(24,213,255,.1);border-color:var(--cyan);color:var(--cyan)}
-.bi-refresh{font-size:10px;color:var(--dim);margin-left:4px}
-/* KPI row */
-.bi-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(140,175,230,.08);align-items:stretch}
-.bi-kpi{padding:18px 20px;border-right:1px solid rgba(140,175,230,.08);display:flex;flex-direction:column;min-height:0;box-sizing:border-box}
-.bi-kpi:last-child{border-right:none}
-.bi-kpi-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
-.bi-kpi-icon{font-size:15px;flex-shrink:0}
-.bi-kpi-delta{font-size:9.5px;font-weight:700;text-align:right;line-height:1.3}
-.bi-kpi-delta.up{color:var(--green)}
-.bi-kpi-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.3;padding-bottom:2px;margin-bottom:4px;display:inline-block}
-.bi-kpi-label{font-size:11.5px;font-weight:700;color:#fff;margin-bottom:2px}
-.bi-kpi-context{font-size:10px;color:var(--dim);line-height:1.4;margin-bottom:8px}
-.bi-kpi-spark{margin-top:4px}
-/* Mid row */
-.bi-mid-row{display:grid;grid-template-columns:1fr 280px;border-bottom:1px solid rgba(140,175,230,.08)}
-.bi-panel{padding:20px 22px}
-.bi-panel-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap}
-.bi-panel-title{font-size:13px;font-weight:700;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
-.bi-panel-sub{font-size:10px;color:var(--dim)}
-/* Bar chart */
-.bi-bar-chart{display:flex;flex-direction:column;gap:11px}
-.bi-bar-row{display:grid;grid-template-columns:148px 1fr 34px;align-items:center;gap:10px}
-.bi-bar-lbl{font-size:11px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bi-bar-track{height:8px;border-radius:4px;background:rgba(140,175,230,.08);overflow:hidden}
-.bi-bar-fill{height:100%;width:0;border-radius:4px;background:var(--bc,var(--cyan));transition:width 1.3s cubic-bezier(.2,.7,.3,1);box-shadow:0 0 8px var(--bc,var(--cyan))}
-.bi-bar-num{font-size:11px;font-weight:700;color:var(--text);text-align:right;font-family:'Plus Jakarta Sans',sans-serif}
-/* Donut */
-.bi-panel-sm{border-left:1px solid rgba(140,175,230,.08)}
-.bi-donut-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
-.bi-donut-svg{width:120px;height:120px;display:block}
-.bi-d-cval{fill:#fff;font-size:11px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif}
-.bi-d-csub{fill:var(--dim);font-size:7.5px;font-family:'Inter',sans-serif}
-.bi-donut-legend{display:flex;flex-direction:column;gap:8px;width:100%}
-.bi-dl{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mut);justify-content:space-between}
-.bi-dl span{width:10px;height:10px;border-radius:3px;flex-shrink:0;display:inline-block}
-.bi-dl b{margin-left:auto;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px}
-/* Bot row */
-.bi-bot-row{display:grid;grid-template-columns:1fr 260px}
-.bi-metric-list{display:flex;flex-direction:column;gap:12px}
-.bi-ml-row{display:grid;grid-template-columns:140px 1fr 40px;align-items:center;gap:10px}
-.bi-ml-label{font-size:11.5px;color:var(--mut)}
-.bi-ml-bar{height:7px;border-radius:4px;background:rgba(140,175,230,.08);overflow:hidden}
-.bi-ml-fill{height:100%;width:0;border-radius:4px;background:var(--mc,var(--cyan));transition:width 1.2s cubic-bezier(.2,.7,.3,1);box-shadow:0 0 8px var(--mc,var(--cyan))}
-.bi-ml-pct{font-size:11.5px;font-weight:700;color:var(--text);text-align:right;font-family:'Plus Jakarta Sans',sans-serif}
-/* Avail panel */
-.bi-avail-panel{border-left:1px solid rgba(140,175,230,.08)}
-.bi-avail{display:flex;flex-direction:column;gap:14px}
-.bi-avail-badge{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:10px}
-.bi-avail-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.3)}}
-.bi-avail-text{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--green)}
-.bi-avail-meta{display:flex;flex-direction:column;gap:0}
-.bi-am-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--dim);padding:7px 0;border-bottom:1px solid rgba(140,175,230,.06)}
-.bi-am-row:last-child{border-bottom:none}
-.bi-am-row b{color:var(--text);font-weight:700}
-.bi-cta{display:block;text-align:center;padding:9px;background:rgba(24,213,255,.08);border:1px solid rgba(24,213,255,.2);border-radius:8px;color:var(--cyan);font-size:12px;font-weight:700;text-decoration:none;transition:.2s;margin-top:4px;letter-spacing:.05em}
-.bi-cta:hover{background:rgba(24,213,255,.16);transform:translateY(-2px)}
-/* Responsive */
-@media(max-width:960px){.bi-mid-row,.bi-bot-row{grid-template-columns:1fr}.bi-panel-sm,.bi-avail-panel{border-left:none;border-top:1px solid rgba(140,175,230,.08)}.bi-donut-wrap{flex-direction:row;flex-wrap:wrap}}
-@media(max-width:680px){.bi-kpi-row{grid-template-columns:1fr 1fr}.bi-kpi:nth-child(2){border-right:none}.bi-kpi:nth-child(3){border-top:1px solid rgba(140,175,230,.08)}.bi-bar-row{grid-template-columns:110px 1fr 28px}}
-@media(max-width:400px){.bi-kpi-row{grid-template-columns:1fr}.bi-kpi{border-right:none;border-bottom:1px solid rgba(140,175,230,.08)}}
-
-
-
-
-
-
-/* ── Software & Applications ── */
-.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tool-cat{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px 22px;transition:.3s}
-.tool-cat:hover{border-color:var(--bd2);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
-.tool-cat-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.tool-cat-emoji{font-size:17px;line-height:1}
-.tool-cat-head h3{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin:0}
-.tool-chips{display:flex;flex-wrap:wrap;gap:8px}
-.tool-chip{display:flex;align-items:center;gap:7px;background:rgba(140,175,230,.06);border:1px solid var(--bd);border-radius:20px;padding:6px 12px 6px 7px;font-size:12px;color:var(--mut);font-weight:600;transition:.2s}
-.tool-chip:hover{background:rgba(24,213,255,.1);border-color:var(--bd2);color:var(--text)}
-.tool-ic{width:18px;height:18px;flex-shrink:0;border-radius:4px;overflow:hidden;display:flex}
-.tool-ic svg{width:100%;height:100%;display:block}
-@media(max-width:900px){.tool-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.tool-grid{grid-template-columns:1fr}}
-
 </style>
 </head>
 <body>
@@ -383,15 +242,9 @@ footer b{color:var(--cyan)}
 <nav><div class="nv">
 <a class="nv-b" href="#home"><img src="" data-img="me" alt="Edmar N. Ocampo"><span class="nv-t">Edmar <span>Ocampo</span></span></a>
 <ul id="nvl">
-<li><a href="#home">Home</a></li>
-  <li><a href="#work">Featured</a></li>
-  <li><a href="#dashboards">Dashboards</a></li>
-  <li><a href="#apps">My Tools</a></li>
-<li><a href="#stack">Stack</a></li>
-<li><a href="#experience">Experience</a></li>
-  <li><a href="#certs">Certs</a></li>
-  <li><a href="#story">My Story</a></li>
-  <li><a href="#journey">Journey</a></li><li><a href="#contact" class="nv-cta">Hire Me</a></li>
+<li><a href="#home">Home</a></li><li><a href="#work">Featured</a></li><li><a href="#dashboards">Dashboards</a></li>
+<li><a href="#apps">My Tools</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li>
+<li><a href="#certs">Certs</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact" class="nv-cta">Hire Me</a></li>
 </ul>
 <button class="ham" onclick="document.getElementById('nvl').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
@@ -425,7 +278,7 @@ footer b{color:var(--cyan)}
 <span>Excel <b>·</b> VBA</span><span>Power BI <b>·</b> DAX</span><span>Power Query</span><span>Google Sheets</span><span>SQL <b>·</b> MySQL</span><span>Tableau</span><span>IBM Cognos</span><span>Financial Modeling</span><span>ETL</span><span>Offline HTML Apps</span><span>AI-Assisted Analytics</span><span>USA <b>·</b> UK <b>·</b> DE <b>·</b> ES <b>·</b> AU <b>·</b> NZ <b>·</b> KSA <b>·</b> CA</span>
 </div></div>
 </header>
-<section id="sql" style="padding:60px 0 10px">
+<section style="padding:60px 0 10px">
 <div class="wrap">
 <div class="kick"><span class="knum">&gt;_</span><span class="keye">Query Me · Interactive</span></div>
 <h2 class="stitle">Don't read my resume. <span class="gt">Query it.</span></h2>
@@ -457,184 +310,30 @@ footer b{color:var(--cyan)}
 </div>
 </div></section>
 
-<section id="career">
+<section>
 <div class="wrap">
-<div class="kick"><span class="knum">★</span><span class="keye">Self-Reported · Auto-Refreshed</span></div>
-<h2 class="stitle">My career, as a <span class="gt">BI report</span></h2>
-<p class="sintro">The kind of executive summary I build for clients — except the subject is me.</p>
-
-<div class="bi-report aos">
-
-  <!-- ── Report header bar ── -->
-  <div class="bi-topbar">
-    <div class="bi-tb-left">
-      <span class="bi-logo">◈</span>
-      <span class="bi-report-name">Analyst Performance Overview</span>
-      <span class="bi-sep">|</span>
-      <span class="bi-workspace">ENO Intelligence · FY 2026</span>
-    </div>
-    <div class="bi-tb-right">
-      <span class="bi-filter-chip active">All Time</span>
-      <span class="bi-filter-chip">Freelance</span>
-      <span class="bi-filter-chip">Engineering</span>
-      <span class="bi-refresh">↻ Last refreshed: <span id="biTs"></span></span>
-    </div>
+<div class="kick"><span class="knum">★</span><span class="keye">Meta, Isn't It?</span></div>
+<h2 class="stitle">My career, as a <span class="gt">dashboard</span></h2>
+<p class="sintro">An analyst's portfolio should be analyzable. Real numbers, animated like I'd build them for a client.</p>
+<div class="g2">
+  <div class="dash-card aos">
+    <h4>📊 Documented Savings by Initiative ($K · Texas Instruments)</h4>
+    <div class="hbar"><div class="lbl"><b>Burr Journey — Tech Symposium 2025</b><span>$2,500K</span></div><div class="trk"><div class="fil" data-w="100"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>0.35mm Blade Qualification</b><span>$539.5K</span></div><div class="trk"><div class="fil" data-w="22"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>Thicker Blade Qualification</b><span>$156K</span></div><div class="trk"><div class="fil" data-w="6.5"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>Blade CPP Reduction Program</b><span>$108.6K+</span></div><div class="trk"><div class="fil" data-w="4.5"></div></div></div>
+    <p style="font-size:11px;color:var(--dim);margin-top:14px">Plus continuous savings programs totaling <b style="color:var(--gold)">$3.1M+</b> documented.</p>
   </div>
-
-  <!-- ── Row 1: KPI cards ── -->
-  <div class="bi-kpi-row">
-    <div class="bi-kpi">
-      <div class="bi-kpi-top">
-        <span class="bi-kpi-icon">📁</span>
-        <span class="bi-kpi-delta up">↑ +18 vs prior year</span>
-      </div>
-      <div class="bi-kpi-val" data-count="102" data-suf="+">0</div>
-      <div class="bi-kpi-label">Upwork Projects Completed</div>
-      <div class="bi-kpi-context">100% Job Success Score · Top-Rated</div>
-      <div class="bi-kpi-spark"><canvas id="ks1" width="120" height="32"></canvas></div>
-    </div>
-    <div class="bi-kpi">
-      <div class="bi-kpi-top">
-        <span class="bi-kpi-icon">💰</span>
-        <span class="bi-kpi-delta up">↑ 3.1× above $1M target</span>
-      </div>
-      <div class="bi-kpi-val" data-pre="$" data-count="3.1" data-suf="M+">0</div>
-      <div class="bi-kpi-label">Cost Savings Documented</div>
-      <div class="bi-kpi-context">Verified across TI engineering projects</div>
-      <div class="bi-kpi-spark"><canvas id="ks2" width="120" height="32"></canvas></div>
-    </div>
-    <div class="bi-kpi">
-      <div class="bi-kpi-top">
-        <span class="bi-kpi-icon">⭐</span>
-        <span class="bi-kpi-delta up">↑ Maintained 5 yrs straight</span>
-      </div>
-      <div class="bi-kpi-val">5.0</div>
-      <div class="bi-kpi-label">Average Client Rating</div>
-      <div class="bi-kpi-context">Majority of 102+ reviews rated 5 stars</div>
-      <div class="bi-kpi-spark"><canvas id="ks3" width="120" height="32"></canvas></div>
-    </div>
-    <div class="bi-kpi">
-      <div class="bi-kpi-top">
-        <span class="bi-kpi-icon">🌏</span>
-        <span class="bi-kpi-delta up">↑ 6 continents reached</span>
-      </div>
-      <div class="bi-kpi-val" data-count="8">0</div>
-      <div class="bi-kpi-label">Countries Served</div>
-      <div class="bi-kpi-context">US, AU, EU, PH, SG, CA, UK &amp; more</div>
-      <div class="bi-kpi-spark"><canvas id="ks4" width="120" height="32"></canvas></div>
-    </div>
+  <div class="dash-card aos">
+    <h4>📉 Process Improvements Delivered (reduction %)</h4>
+    <div class="hbar"><div class="lbl"><b>Test Loss Rate (LRR)</b><span>−87%</span></div><div class="trk"><div class="fil red" data-w="87"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>Blade Cost-Per-Piece (5-yr low)</b><span>−66%</span></div><div class="trk"><div class="fil red" data-w="66"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>CQI Events (Burr program)</b><span>−70%</span></div><div class="trk"><div class="fil red" data-w="70"></div></div></div>
+    <div class="hbar"><div class="lbl"><b>Manual HR Reporting Time (clients)</b><span>−40–60%</span></div><div class="trk"><div class="fil red" data-w="50"></div></div></div>
+    <p style="font-size:11px;color:var(--dim);margin-top:14px">Defects: <b style="color:var(--teal)">16,000 DPPM</b> burr reduction · recall rate <b style="color:var(--teal)">−12%</b> in one quarter (client).</p>
   </div>
-
-  <!-- ── Row 2: Bar chart + donut ── -->
-  <div class="bi-mid-row">
-
-    <div class="bi-panel bi-panel-lg">
-      <div class="bi-panel-head">
-        <span class="bi-panel-title">Tool Proficiency by Usage</span>
-        <span class="bi-panel-sub">Across 102+ completed projects · Active client load</span>
-      </div>
-      <div class="bi-bar-chart">
-        <div class="bi-bar-row" data-pct="100"><span class="bi-bar-lbl">Excel · VBA · Power Query</span><div class="bi-bar-track"><div class="bi-bar-fill" data-color="#18D5FF" style="width:100%;background:linear-gradient(90deg,#18D5FF,#18D5FFbb);box-shadow:0 0 10px #18D5FF88"></div></div><span class="bi-bar-num">70%</span></div>
-        <div class="bi-bar-row" data-pct="43"><span class="bi-bar-lbl">Google Sheets · Apps Script</span><div class="bi-bar-track"><div class="bi-bar-fill" data-color="#6A5CFF" style="width:43%;background:linear-gradient(90deg,#6A5CFF,#6A5CFFbb);box-shadow:0 0 10px #6A5CFF88"></div></div><span class="bi-bar-num">30%</span></div>
-        <div class="bi-bar-row" data-pct="31"><span class="bi-bar-lbl">Power BI · DAX</span><div class="bi-bar-track"><div class="bi-bar-fill" data-color="#00C9A7" style="width:31%;background:linear-gradient(90deg,#00C9A7,#00C9A7bb);box-shadow:0 0 10px #00C9A788"></div></div><span class="bi-bar-num">Proficient</span></div>
-        <div class="bi-bar-row" data-pct="29"><span class="bi-bar-lbl">SQL · MySQL · Oracle</span><div class="bi-bar-track"><div class="bi-bar-fill" data-color="#F5D87A" style="width:29%;background:linear-gradient(90deg,#F5D87A,#F5D87Abb);box-shadow:0 0 10px #F5D87A88"></div></div><span class="bi-bar-num">Proficient</span></div>
-        <div class="bi-bar-row" data-pct="12"><span class="bi-bar-lbl">Tableau · IBM Cognos</span><div class="bi-bar-track"><div class="bi-bar-fill" data-color="#F5A623" style="width:12%;background:linear-gradient(90deg,#F5A623,#F5A623bb);box-shadow:0 0 10px #F5A62388"></div></div><span class="bi-bar-num">Training</span></div>
-      </div>
-    </div>
-
-    <div class="bi-panel bi-panel-sm">
-      <div class="bi-panel-head">
-        <span class="bi-panel-title">Tool Distribution</span>
-        <span class="bi-panel-sub">By project usage</span>
-      </div>
-      <div class="bi-donut-wrap">
-        <svg viewBox="0 0 120 120" class="bi-donut-svg">
-          <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(140,175,230,.08)" stroke-width="16"/>
-          <!-- Excel · VBA · PQ 70% -->
-          <circle cx="60" cy="60" r="44" fill="none" stroke="#18D5FF" stroke-width="16"
-            stroke-dasharray="193.5 276.5" stroke-dashoffset="69.1" transform="rotate(-90 60 60)"
-            class="bi-dseg" style="opacity:1"/>
-          <!-- Google Sheets 30% -->
-          <circle cx="60" cy="60" r="44" fill="none" stroke="#6A5CFF" stroke-width="16"
-            stroke-dasharray="82.9 276.5" stroke-dashoffset="-124.4" transform="rotate(-90 60 60)"
-            class="bi-dseg" style="opacity:1"/>
-          <circle cx="60" cy="60" r="36" fill="#04101F"/>
-          <text x="60" y="56" text-anchor="middle" class="bi-d-cval">Excel</text>
-          <text x="60" y="67" text-anchor="middle" class="bi-d-csub">Primary Tool</text>
-        </svg>
-        <div class="bi-donut-legend">
-          <div class="bi-dl"><span style="background:#18D5FF"></span>Excel · VBA · PQ <b>70%</b></div>
-          <div class="bi-dl"><span style="background:#6A5CFF"></span>Google Sheets <b>30%</b></div>
-          <div class="bi-dl"><span style="background:#00C9A7"></span>Power BI <b>Personal</b></div>
-          <div class="bi-dl"><span style="background:#F5D87A"></span>SQL <b>Proficient</b></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ── Row 3: Delivery + Availability ── -->
-  <div class="bi-bot-row">
-
-    <div class="bi-panel">
-      <div class="bi-panel-head">
-        <span class="bi-panel-title">Delivery Performance</span>
-        <span class="bi-panel-sub">Based on 102+ completed engagements</span>
-      </div>
-      <div class="bi-metric-list">
-        <div class="bi-ml-row">
-          <span class="bi-ml-label">Upwork JSS</span>
-          <div class="bi-ml-bar"><div class="bi-ml-fill" data-w="100" data-color="#4ADE80" style="width:100%;background:linear-gradient(90deg,#4ADE80,#4ADE80bb);box-shadow:0 0 10px #4ADE8088"></div></div>
-          <span class="bi-ml-pct">100%</span>
-        </div>
-        <div class="bi-ml-row">
-          <span class="bi-ml-label">5-Star Reviews</span>
-          <div class="bi-ml-bar"><div class="bi-ml-fill" data-w="98" data-color="#18D5FF" style="width:98%;background:linear-gradient(90deg,#18D5FF,#18D5FFbb);box-shadow:0 0 10px #18D5FF88"></div></div>
-          <span class="bi-ml-pct">98%</span>
-        </div>
-        <div class="bi-ml-row">
-          <span class="bi-ml-label">On-Time Delivery</span>
-          <div class="bi-ml-bar"><div class="bi-ml-fill" data-w="95" data-color="#00C9A7" style="width:95%;background:linear-gradient(90deg,#00C9A7,#00C9A7bb);box-shadow:0 0 10px #00C9A788"></div></div>
-          <span class="bi-ml-pct">95%</span>
-        </div>
-        <div class="bi-ml-row">
-          <span class="bi-ml-label">Response Rate</span>
-          <div class="bi-ml-bar"><div class="bi-ml-fill" data-w="100" data-color="#6A5CFF" style="width:100%;background:linear-gradient(90deg,#6A5CFF,#6A5CFFbb);box-shadow:0 0 10px #6A5CFF88"></div></div>
-          <span class="bi-ml-pct">&lt;24h</span>
-        </div>
-        <div class="bi-ml-row">
-          <span class="bi-ml-label">Top-Rated Status</span>
-          <div class="bi-ml-bar"><div class="bi-ml-fill" data-w="100" data-color="#F5D87A" style="width:100%;background:linear-gradient(90deg,#F5D87A,#F5D87Abb);box-shadow:0 0 10px #F5D87A88"></div></div>
-          <span class="bi-ml-pct">Active</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="bi-panel bi-avail-panel">
-      <div class="bi-panel-head">
-        <span class="bi-panel-title">Analyst Availability</span>
-      </div>
-      <div class="bi-avail">
-        <div class="bi-avail-badge">
-          <span class="bi-avail-dot"></span>
-          <span class="bi-avail-text">OPEN FOR PROJECTS</span>
-        </div>
-        <div class="bi-avail-meta">
-          <div class="bi-am-row"><span>Response SLA</span><b>&lt; 24 hrs</b></div>
-          <div class="bi-am-row"><span>Time Zone</span><b>PH · US / EU / AU</b></div>
-          <div class="bi-am-row"><span>Rate Range</span><b>$15 – $25 / hr</b></div>
-          <div class="bi-am-row"><span>Experience</span><b>15+ years</b></div>
-          <div class="bi-am-row"><span>NDA-Friendly</span><b>✓ Yes</b></div>
-        </div>
-        <a href="#contact" class="bi-cta">Get in Touch →</a>
-      </div>
-    </div>
-
-  </div>
-
 </div>
-</div></section>
-<section class="alt" id="dashboards">
+</div></section><section class="alt" id="dashboards">
 <div class="wrap">
 <div class="kick"><span class="knum">02</span><span class="keye">Dashboard Gallery</span></div>
 <h2 class="stitle">Real deliverables, real <span class="gt">decisions</span></h2>
@@ -666,82 +365,9 @@ footer b{color:var(--cyan)}
 <div class="app aos"><div class="shot"><img src="" data-img="a6" loading="lazy" alt="Prompt Builder — AI Prompt Engineer" onclick="lb(this)"></div><div class="bd"><div class="at">🤖 AI / LLM Tools · Offline HTML App</div><h3>Prompt Builder — AI Prompt Engineer</h3><div class="stack">HTML · JavaScript · Claude · GPT</div><div class="ds">Design, score &amp; optimize prompts with 0–100 quality scoring, variable injection &amp; a prompt library.</div><div class="why">💡 The best AI results start with the best prompts — I built a tool to make that repeatable.</div></div></div></div>
 <p style="text-align:center;margin-top:24px;font-size:12px;color:var(--dim)">📌 All tools run 100% offline in any modern browser — no login, no cloud dependency.</p>
 </div></section>
-<section id="stack">
-<div class="wrap">
-<div class="kick"><span class="knum">04</span><span class="keye">Software &amp; Applications</span></div>
-<h2 class="stitle">My <span class="gt">tools of the trade</span></h2>
-<p class="sintro">35+ tools used across data analytics, business intelligence, process engineering, AI, and community management.</p>
-<div class="tool-grid aos">
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">🤖</span><h3>AI Tools</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#D97757"/><path d="M9 21l3-9 1.5 4.5h5L20 12l3 9h-2.5l-1.5-4.5h-5L12.5 21H9z" fill="#fff"/></svg></span><span>Claude</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#000"/><path d="M21 13.5c.3-1.8-.4-3.6-2-4.6-1.6-1-3.6-.9-5.1.2-1.8-.5-3.6.2-4.6 1.8-1 1.6-.9 3.6.2 5.1-.5 1.8.2 3.6 1.8 4.6 1.6 1 3.6.9 5.1-.2 1.8.5 3.6-.2 4.6-1.8 1-1.6.9-3.6-.2-5.1.6-.2 1-.6 1.2-1zm-9 6.5l-2-1.2v-3.5l2 1.2v3.5zm5-9l2 1.2v3.5l-2-1.2v-3.5z" fill="#fff" opacity="0"/><circle cx="16" cy="16" r="6" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="16" cy="16" r="2.5" fill="#fff"/></svg></span><span>ChatGPT</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4c0 6-2 12-12 12 10 0 12 6 12 12 0-6 2-12 12-12-10 0-12-6-12-12z" fill="url(#gg)"/><defs><linearGradient id="gg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#4C8DF6"/><stop offset=".5" stop-color="#A058F0"/><stop offset="1" stop-color="#F25C8A"/></linearGradient></defs></svg></span><span>Gemini</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#000"/><path d="M9 22l8-12M13 22l8-12M9 10h12" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span><span>Grok</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#4D6BFE"/><path d="M10 12c2-2 6-2 8 0s2 6 0 8-6 2-8 0M16 11v10" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span><span>DeepSeek</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#1A1A2E"/><path d="M11 22V10l10 6-10 6z" fill="#FF6B6B"/></svg></span><span>Gamma AI</span></div>
-</div>
-</div>
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">📊</span><h3>Data & Analytics</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#21A366"/><path d="M9 9h7v3H9V9zm9 0h5v3h-5V9zM9 14h7v3H9v-3zm9 0h5v3h-5v-3zm-9 5h7v3H9v-3zm9 0h5v3h-5v-3z" fill="#fff" opacity=".25"/><path d="M11 10l4.5 6L11 22h2.4l3.3-4.6L20 22h2.4l-4.5-6L22 10h-2.4l-3.3 4.6L13.4 10H11z" fill="#fff"/></svg></span><span>Excel</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="14" width="6" height="14" rx="1.5" fill="#F2C811"/><rect x="13" y="8" width="6" height="20" rx="1.5" fill="#F2C811" opacity=".85"/><rect x="22" y="2" width="6" height="26" rx="1.5" fill="#F2C811" opacity=".6"/></svg></span><span>Power BI</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#2EA1E0"/><path d="M10 12h12M10 16h9M10 20h12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span>Power Query</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#1F2C44"/><g fill="#E8762C"><rect x="15" y="6" width="2" height="6"/><rect x="15" y="20" width="2" height="6"/><rect x="6" y="15" width="6" height="2"/><rect x="20" y="15" width="6" height="2"/><rect x="14.3" y="13.5" width="3.4" height="5"/></g></svg></span><span>Tableau</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#7D3AC1"/><circle cx="11" cy="16" r="4" fill="#fff" opacity=".9"/><circle cx="21" cy="16" r="4" fill="#fff" opacity=".5"/><path d="M11 16h10" stroke="#fff" stroke-width="1.5"/></svg></span><span>IBM Cognos</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M6 22c2-6 4-10 6-12 1 4 1.5 8 1.5 12M14 22c1-5 2-8 4-10M22 22c0-4 1-7 3-9" stroke="#00758F" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="25" cy="11" r="1.5" fill="#F29111"/></svg></span><span>SQL</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="3" width="22" height="26" rx="2" fill="#0F9D58"/><rect x="9" y="9" width="14" height="14" fill="#fff"/><path d="M9 13h14M9 17h14M9 21h14M14 9v14M19 9v14" stroke="#0F9D58" stroke-width="1"/></svg></span><span>Google Sheets</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#3CB4E7"/><circle cx="11" cy="13" r="3" fill="#fff"/><circle cx="20" cy="11" r="2" fill="#fff" opacity=".7"/><circle cx="18" cy="20" r="4" fill="#fff" opacity=".5"/></svg></span><span>TIBCO Spotfire</span></div>
-</div>
-</div>
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">🟦</span><h3>Microsoft Suite</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#2B579A"/><path d="M8 10l2.2 12 2.3-9 2.3 9L17 10h-2l-1.2 7-1.8-7h-1.8l-1.8 7L8.2 10H8zM19 10h6v2h-6zM19 14h6v2h-6zM19 18h6v2h-6z" fill="#fff"/></svg></span><span>Word</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#D24726"/><rect x="8" y="8" width="10" height="16" rx="1" fill="#fff"/><path d="M11 11h4a3 3 0 010 6h-4v-6z" fill="#D24726"/><circle cx="13" cy="14" r="1.5" fill="#fff"/></svg></span><span>PowerPoint</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#0078D4"/><rect x="4" y="9" width="14" height="14" rx="2" fill="#fff"/><circle cx="11" cy="16" r="4" fill="#0078D4"/><path d="M18 11h10v10H18z" fill="#28A8EA" opacity=".7"/></svg></span><span>Outlook</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#5059C9"/><circle cx="20" cy="11" r="3" fill="#fff" opacity=".8"/><rect x="14" y="13" width="13" height="11" rx="2" fill="#fff" opacity=".8"/><circle cx="11" cy="13" r="4" fill="#fff"/><rect x="6" y="16" width="11" height="10" rx="2" fill="#fff"/></svg></span><span>Teams</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M11 21a5 5 0 01-1-9.9A6.5 6.5 0 0123 13a4.5 4.5 0 01-1 8.9z" fill="#0078D4"/><path d="M11 21h12a4.5 4.5 0 000-9 4.4 4.4 0 00-1.4.2A6.5 6.5 0 0010 11a5 5 0 011 9.9z" fill="#1490DF"/></svg></span><span>OneDrive</span></div>
-</div>
-</div>
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">🌐</span><h3>Google Workspace</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M8 3h12l6 6v20H8z" fill="#4285F4"/><path d="M20 3v6h6z" fill="#A4C2F7"/><path d="M11 13h10M11 17h10M11 21h7" stroke="#fff" stroke-width="1.6"/></svg></span><span>Docs</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M8 3h12l6 6v20H8z" fill="#FBBC04"/><path d="M20 3v6h6z" fill="#FEEFC3"/><rect x="11" y="13" width="10" height="7" fill="#fff"/></svg></span><span>Slides</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M8 3h12l6 6v20H8z" fill="#7248B9"/><path d="M20 3v6h6z" fill="#C8B4E8"/><path d="M11 13h2v2h-2zM15 14h6M11 18h2v2h-2zM15 19h6M11 23h2v2h-2zM15 24h6" stroke="#fff" stroke-width="1.4" fill="#fff"/></svg></span><span>Forms</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><path d="M11 4l10 0 9 16-5 8-10 0z" fill="#FFBA00" opacity="0"/><path d="M11 4h10l-9 16H2z" fill="#0066DA"/><path d="M21 4l9 16-5 8-9-16z" fill="#00AC47"/><path d="M11 20h14l-5 8H6z" fill="#EA4335"/></svg></span><span>Drive</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="9" width="16" height="14" rx="2" fill="#fff"/><path d="M20 14l8-4v12l-8-4z" fill="#00897B"/><rect x="4" y="9" width="16" height="3.5" fill="#1E8E3E"/><rect x="4" y="19.5" width="16" height="3.5" fill="#EA4335"/><rect x="4" y="12.5" width="3.5" height="7" fill="#FBBC04"/></svg></span><span>Meet</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect x="3" y="6" width="26" height="20" rx="2" fill="#fff"/><path d="M3 8l13 9 13-9" stroke="#EA4335" stroke-width="2.5" fill="none"/><path d="M3 8v16h4V11z" fill="#4285F4"/><path d="M29 8v16h-4V11z" fill="#34A853"/><path d="M7 8h4l5 4 5-4h4l-9 7z" fill="#EA4335"/></svg></span><span>Gmail</span></div>
-</div>
-</div>
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">💬</span><h3>Communication</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect x="11" y="3" width="4" height="11" rx="2" fill="#36C5F0"/><rect x="3" y="11" width="11" height="4" rx="2" fill="#2EB67D"/><rect x="17" y="18" width="4" height="11" rx="2" fill="#ECB22E"/><rect x="18" y="17" width="11" height="4" rx="2" fill="#E01E5A"/></svg></span><span>Slack</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2D8CFF"/><rect x="5" y="11" width="16" height="10" rx="2" fill="#fff"/><path d="M21 14l6-3v10l-6-3z" fill="#fff"/></svg></span><span>Zoom</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#00BCEB"/><circle cx="16" cy="16" r="7" fill="#fff"/><circle cx="16" cy="16" r="3" fill="#00BCEB"/></svg></span><span>Webex</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#25D366"/><path d="M11 21l1-4a6 6 0 119.5-7.2A6 6 0 0113 20l-2 1z" fill="#fff"/></svg></span><span>WhatsApp</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#229ED9"/><path d="M8 16l16-6-3 14-5-4-2 3-1-5z" fill="#fff"/></svg></span><span>Telegram</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5865F2"/><circle cx="12" cy="17" r="2.2" fill="#fff"/><circle cx="20" cy="17" r="2.2" fill="#fff"/><path d="M11 11l-2 3M21 11l2 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>Discord</span></div>
-</div>
-</div>
-<div class="tool-cat">
-<div class="tool-cat-head"><span class="tool-cat-emoji">🎨</span><h3>Design & Cloud</h3></div>
-<div class="tool-chips">
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#00C4CC"/><ellipse cx="16" cy="16" rx="9" ry="5.5" fill="#fff" opacity=".95"/><circle cx="22" cy="13" r="2.5" fill="#7D2AE8"/></svg></span><span>Canva</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#6001D2"/><path d="M9 9l5 9v6h2v-6l5-9h-2.5L16 15l-2.5-6H11z" fill="#fff"/><circle cx="22.5" cy="22.5" r="1.8" fill="#fff"/></svg></span><span>Yahoo Mail</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#181717"/><path d="M16 8a8 8 0 00-2.5 15.6c.4.1.5-.2.5-.4v-1.5c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-3.9 0-.9.3-1.6.8-2.1-.1-.2-.4-1.1.1-2.3 0 0 .7-.2 2.3.8a8 8 0 014.2 0c1.6-1.1 2.3-.8 2.3-.8.4 1.2.1 2.1.1 2.3.5.5.8 1.2.8 2.1 0 3-1.8 3.7-3.6 3.9.3.3.5.8.5 1.6v2.4c0 .2.1.5.5.4A8 8 0 0016 8z" fill="#fff"/></svg></span><span>GitHub</span></div>
-<div class="tool-chip"><span class="tool-ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#4FC3F7"/><path d="M9 18c0-2 1.5-3.5 3.5-3.5.5-2 2.3-3.5 4.5-3.5 2.5 0 4.5 2 4.5 4.5h.5a3 3 0 010 6H10a3 3 0 01-1-2.5z" fill="#fff"/></svg></span><span>Ice Drive</span></div>
-</div>
-</div>
-</div>
-</div></section>
 <section class="alt" id="experience">
 <div class="wrap">
-<div class="kick"><span class="knum">05</span><span class="keye">Work Experience</span></div>
+<div class="kick"><span class="knum">04</span><span class="keye">Work Experience</span></div>
 <h2 class="stitle">14+ years of measured <span class="gt">results</span></h2>
 <div class="xp" style="margin-top:36px">
 <div class="xp-item aos">
@@ -780,8 +406,20 @@ footer b{color:var(--cyan)}
 </div>
 </div>
 </div></section>
-
-
+<section id="skills">
+<div class="wrap">
+<div class="kick"><span class="knum">05</span><span class="keye">Core Skills</span></div>
+<h2 class="stitle">What I bring to the <span class="gt">table</span></h2>
+<div class="g3" style="margin-top:30px"><div class="card skg aos"><h4>📊 Data Analysis & BI</h4><div class="chips"><span class="chip">Statistical Analysis</span><span class="chip">KPI Design</span><span class="chip">Dashboard Development</span><span class="chip">DAX & Power Pivot</span><span class="chip">Cohort Analysis</span><span class="chip">Data Visualization</span><span class="chip">SQL Querying</span><span class="chip">ETL Design</span></div></div>
+<div class="card skg aos"><h4>⚙️ Spreadsheet & Automation</h4><div class="chips"><span class="chip">VBA Macro Automation</span><span class="chip">Power Query (M Code)</span><span class="chip">Dynamic Reporting</span><span class="chip">Data Cleaning</span><span class="chip">XLOOKUP / ARRAYFORMULA</span><span class="chip">Apps Script</span></div></div>
+<div class="card skg aos"><h4>💰 Financial Modeling</h4><div class="chips"><span class="chip">ROI Analysis</span><span class="chip">Revenue Forecasting</span><span class="chip">Cash Flow Modeling</span><span class="chip">Scenario & Sensitivity</span><span class="chip">Break-Even Analysis</span><span class="chip">5-Year Projections</span></div></div>
+<div class="card skg aos"><h4>🏭 Process & Quality</h4><div class="chips"><span class="chip">SPC</span><span class="chip">Root Cause Analysis</span><span class="chip">DOE</span><span class="chip">FMEA</span><span class="chip">8D Methodology</span><span class="chip">Lean Manufacturing</span><span class="chip">Yield Improvement</span></div></div>
+<div class="card skg aos"><h4>🤖 AI-Assisted Analytics</h4><div class="chips"><span class="chip">Prompt Engineering</span><span class="chip">AI-Assisted Modeling</span><span class="chip">Data Forecasting with AI</span><span class="chip">Workflow Automation</span><span class="chip">LLM Tool Integration</span></div></div>
+<div class="card skg aos"><h4>💻 App Development</h4><div class="chips"><span class="chip">JavaScript (Vanilla)</span><span class="chip">Chart.js</span><span class="chip">HTML & CSS</span><span class="chip">Offline App Architecture</span><span class="chip">AI-Assisted Coding</span></div></div></div>
+<div style="margin-top:18px" class="chips aos">
+<span class="chip">🌟 Leadership</span><span class="chip">🎯 Strategic</span><span class="chip">💬 Communication</span><span class="chip">🔬 Problem Solver</span><span class="chip">💡 Innovative</span><span class="chip">⏳ Time Management</span><span class="chip">🔄 Adaptability</span><span class="chip">🤝 Teamwork</span><span class="chip">🙏 Active Listening</span><span class="chip">⚡ Work Ethic</span>
+</div>
+</div></section>
 <section class="alt" id="certs">
 <div class="wrap">
 <div class="kick"><span class="knum">06</span><span class="keye">Certifications</span></div>
@@ -798,29 +436,6 @@ footer b{color:var(--cyan)}
 <div class="cred aos"><div class="ico">🗄️</div><div><div class="t">MySQL for Data Analysis</div><div class="s">LinkedIn Learning · Jan 2026</div></div></div>
 <div class="cred aos"><div class="ico">📉</div><div><div class="t">TIBCO Spotfire: Beginners to Advanced</div><div class="s">Udemy · 2023</div></div></div>
 <div class="cred aos"><div class="ico">🤖</div><div><div class="t">AI-Assisted Data Analysis</div><div class="s">Udemy · 2025</div></div></div></div>
-</div></section>
-<section id="story">
-<div class="wrap">
-<div class="kick"><span class="knum">★</span><span class="keye">My Story</span></div>
-<h2 class="stitle">From video games to <span class="gt">a calling</span></h2>
-<div class="g2" style="align-items:start;margin-top:30px">
-  <div class="card aos" style="font-size:14px;color:var(--mut);line-height:1.85">
-    <p style="font-size:15px;color:var(--text);margin-bottom:14px"><b>I've always been driven to solve problems using data</b> — leveraging spreadsheets, analytics, and structured systems to improve operations and reduce costs.</p>
-    <p style="margin-bottom:14px">Growing up, I was deeply hooked on video games. What started as curiosity about games turned into fascination with computers, systems, and how applications work behind the scenes — which naturally evolved into spreadsheets, analytics tools, and problem-solving through technology.</p>
-    <p style="margin-bottom:14px">What consistently frustrated me was seeing organizations make decisions without clear data — especially when simple systems could reveal inefficiencies and opportunities.</p>
-    <p style="margin-bottom:14px">When fuel prices started rising, I felt this firsthand. I wanted a clear way to control my own travel costs — no practical tool existed. <b style="color:var(--cyan)">So I built one: a fuel cost calculator.</b> That's when I realized many individuals and businesses face rising costs with no structured way to analyze them.</p>
-    <p style="background:linear-gradient(135deg,rgba(24,213,255,.08),rgba(106,92,255,.08));border:1px solid rgba(24,213,255,.3);border-radius:12px;padding:16px 18px;color:#CFE0F5;font-style:italic;font-size:14.5px;box-shadow:0 0 28px rgba(24,213,255,.08)">💡 I saw a gap: while data is everywhere, practical systems that turn data into decisions are rare. That insight became the foundation of everything I build.</p>
-    <p style="margin-top:14px">Today, I build simple, data-driven tools and analytics systems that help organizations reduce costs, improve efficiency, and make confident decisions — in business operations and community impact alike.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:13px">
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">🎮 Early Passion</h3><p>Video games sparked a deep curiosity about how computers and applications work behind the scenes.</p></div>
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">📊 Analytics Calling</h3><p>Curiosity evolved into spreadsheets, data tools, and automation — real systems for real problems.</p></div>
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">🏭 Engineering Impact</h3><p>14+ years at Texas Instruments — $3.1M+ savings, LRR improvement, and data-driven process engineering.</p></div>
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">🤝 Community Work</h3><p>50+ programs and hundreds of volunteers — the same data mindset, applied to community impact.</p></div>
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">⛽ The Fuel Calculator Moment</h3><p>Rising fuel costs → built a calculator → realized practical data tools are rare, but needed everywhere.</p></div>
-    <div class="card aos" style="padding:18px 22px"><h3 style="font-size:14px">🌐 Freelance &amp; Beyond</h3><p>102+ Upwork projects, majority 5-star — helping businesses globally turn data into confident decisions.</p></div>
-  </div>
-</div>
 </div></section>
 <section id="journey">
 <div class="wrap">
@@ -883,7 +498,7 @@ links.forEach(function(a){a.addEventListener('click',function(){document.getElem
 var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
  links.forEach(function(a){a.classList.remove('active')});
  var t=document.querySelector('#nvl a[href="#'+e.target.id+'"]');if(t)t.classList.add('active')}})},{rootMargin:'-25% 0px -65% 0px'});
-['home','work','dashboards','apps','experience','skills','story','certs','journey','contact'].forEach(function(i){var el=document.getElementById(i);if(el)spy.observe(el)});
+['home','work','dashboards','apps','experience','skills','certs','journey','contact'].forEach(function(i){var el=document.getElementById(i);if(el)spy.observe(el)});
 // lightbox
 function lb(el){var img=el.tagName==='IMG'?el:el.querySelector('img');
  document.getElementById('lbimg').src=img.src;document.getElementById('lb').style.display='flex'}
@@ -937,54 +552,43 @@ document.querySelectorAll('canvas.shader-aurora').forEach(function(cv){
 
 // ── SQL console ──
 var Q=[
- {q:"SELECT\n  name,\n  title,\n  experience_yrs,\n  upwork_rating,\n  job_success_score\nFROM analyst_profile\nWHERE analyst_id = 'ENO-PH-2026';",
-  cols:["name","title","experience_yrs","upwork_rating","jss"],
-  rows:[["Edmar N. Ocampo","Sr. Process Engineer \u00d7 Data Analyst","15+","5.0 \u2605","100%"]],
-  ok:"1 record returned. Zero NULL fields. Unique constraint satisfied."},
- {q:"SELECT\n  industry,\n  engagement_type,\n  primary_tool,\n  outcome\nFROM client_engagements\nORDER BY impact_score DESC\nLIMIT 10;",
-  cols:["industry","engagement_type","primary_tool","outcome"],
-  rows:[
-   ["Financial Services","Dashboard Build","Excel + Power Query","Reporting: 5 days \u2192 same-day"],
-   ["SaaS / Technology","KPI Reporting","Google Sheets + Apps Script","Unified metrics, 3 departments"],
-   ["Retail / E-commerce","Sales Analytics","Excel + VBA","Revenue visibility +68%"],
-   ["Healthcare","Report Automation","Excel + VBA","100% manual error elimination"],
-   ["Nonprofit / NGO","Financial System","Excel (27 sheets)","Fund accountability, 150K+ stakeholders"],
-   ["Manufacturing","Process Analytics","Excel + SQL","$3.1M+ in documented cost savings"],
-   ["Real Estate","Portfolio Tracker","Google Sheets","Deal pipeline, 40% faster reviews"],
-   ["HR / People Ops","Workforce Dashboard","Excel + Power BI","Attrition model, 3 early risk flags"],
-   ["Logistics","Ops Analytics","Excel + Power Query","Inventory cycle cut by 30%"],
-   ["Education","Student Analytics","Google Sheets","Enrollment trend model from scratch"]],
-  ok:"10 of 102+ rows returned. All engagements delivered on-time or early."},
- {q:"SELECT\n  tool,\n  proficiency_level,\n  usage_share,\n  years_in_use\nFROM tech_stack\nORDER BY usage_share DESC;",
-  cols:["tool","proficiency_level","usage_share","years_in_use"],
-  rows:[
-   ["Excel \u00b7 VBA \u00b7 Power Query","Expert","70% of projects","12 yrs"],
-   ["Google Sheets \u00b7 Apps Script","Expert","30% of projects","7 yrs"],
-   ["Power BI \u00b7 DAX","Proficient (growing)","personal + client use","4 yrs"],
-   ["SQL \u00b7 MySQL \u00b7 Oracle","Proficient","data extraction + ETL","6 yrs"],
-   ["Tableau \u00b7 IBM Cognos","Training completed","exposure only","2 yrs"]],
-  ok:"5 rows returned. Excel + GSheets cover 100% of active client load."},
- {q:"SELECT availability, timezone, avg_response_hrs\nFROM analyst_availability\nWHERE open_to_work = TRUE;",
-  cols:["availability","timezone","avg_response_hrs"],
-  rows:[["\u25cf OPEN","PH \u2014 US / EU / AU aligned","< 24"]],
-  ok:"Active slot available. INSERT INTO your_project VALUES ('let\u2019s talk');"}];
+ {q:"SELECT * FROM analyst WHERE name = 'Edmar';",
+  cols:["role","rating","projects","savings","status"],
+  rows:[["Data Analyst x Process Engineer","5.0 \u2605","102+","$3.1M+","Top-Rated"]],
+  ok:"1 row returned (there is only one)."},
+ {q:"SELECT project, savings FROM ti_wins ORDER BY savings DESC;",
+  cols:["project","savings"],
+  rows:[["Burr Journey \u2014 Tech Symposium 2025","$2,500,000"],["0.35mm Blade Qualification","$539,500"],["Thicker Blade Qualification","$156,000"],["Blade CPP Reduction Program","$108,600+"]],
+  ok:"4 rows returned. SUM(savings) > $3.1M documented."},
+ {q:"SELECT skill, level FROM stack;",
+  cols:["skill","level"],
+  rows:[["Excel / VBA / Power Query","\u2588\u2588\u2588\u2588\u2588 expert"],["Power BI / DAX","\u2588\u2588\u2588\u2588\u2588 expert"],["SQL / MySQL","\u2588\u2588\u2588\u2588\u2581 advanced"],["Tableau / IBM Cognos","\u2588\u2588\u2588\u2588\u2581 advanced"],["Offline HTML Apps","\u2588\u2588\u2588\u2588\u2588 builder"]],
+  ok:"5 rows returned. No NULL values found."},
+ {q:"SELECT * FROM availability;",
+  cols:["status","response_time","timezone","contact"],
+  rows:[["\u25CF OPEN","< 24 hours","PH (US-friendly)","edmarocampo@gmail.com"]],
+  ok:"Slot available. INSERT INTO inbox VALUES (your_project);"}];
 var tb=document.getElementById('tbody'),busy=false;
 function runQ(i){
  if(busy||!tb)return;busy=true;tb.innerHTML='';
  var d=Q[i],ln=document.createElement('div');ln.className='ln';tb.appendChild(ln);
  var c=0;(function tp(){
   ln.textContent=d.q.slice(0,c);c++;
-  if(c<=d.q.length){setTimeout(tp,8)}
+  if(c<=d.q.length){setTimeout(tp,16)}
   else{setTimeout(function(){
    var t='<table><tr>'+d.cols.map(function(x){return '<th>'+x+'</th>'}).join('')+'</tr>';
    d.rows.forEach(function(r){t+='<tr>'+r.map(function(x){return '<td>'+x+'</td>'}).join('')+'</tr>'});
    t+='</table><div class="ok">\u2714 '+d.ok+'</div>';
    var out=document.createElement('div');out.innerHTML=t;out.style.opacity='0';tb.appendChild(out);
    setTimeout(function(){out.style.transition='.5s';out.style.opacity='1';busy=false},40);
-  },160)}
+  },280)}
  })();}
 if(tb)runQ(0);
-if(dq)dqo.observe(dq);
+// ── dashboard bars ──
+var bo=new IntersectionObserver(function(es){es.forEach(function(e){
+ if(e.isIntersecting){e.target.querySelectorAll('.fil').forEach(function(f,i){
+  setTimeout(function(){f.style.width=f.dataset.w+'%'},i*140)});bo.unobserve(e.target)}})},{threshold:.35});
+document.querySelectorAll('.dash-card').forEach(function(c){bo.observe(c)});
 // ── gallery slicers ──
 var sl=document.getElementById('slicers');
 if(sl){sl.querySelectorAll('button').forEach(function(b){
@@ -996,63 +600,6 @@ if(sl){sl.querySelectorAll('button').forEach(function(b){
    g.classList.toggle('hide', f!=='all' && tool!==f);
   });
  });});}
-
-
-
-// ── BI Analytics Report ──
-(function(){
-  var d=new Date();
-  var ts=document.getElementById('biTs');
-  if(ts)ts.textContent=d.toISOString().slice(0,10)+' '+d.toTimeString().slice(0,5);
-  // filter chip toggle
-  document.querySelectorAll('.bi-filter-chip').forEach(function(c){
-    c.addEventListener('click',function(){
-      document.querySelectorAll('.bi-filter-chip').forEach(function(x){x.classList.remove('active');});
-      c.classList.add('active');
-    });
-  });
-})();
-function biSpark(id,data,color){
-  var c=document.getElementById(id);if(!c)return;
-  var ctx=c.getContext('2d'),w=c.width,h=c.height,p=3;
-  var mn=Math.min.apply(null,data),mx=Math.max.apply(null,data),rng=mx-mn||1;
-  ctx.clearRect(0,0,w,h);
-  var pts=data.map(function(v,i){return{x:p+(i/(data.length-1))*(w-p*2),y:h-p-(v-mn)/rng*(h-p*2)};});
-  // area
-  ctx.beginPath();pts.forEach(function(pt,i){i?ctx.lineTo(pt.x,pt.y):ctx.moveTo(pt.x,pt.y);});
-  ctx.lineTo(pts[pts.length-1].x,h);ctx.lineTo(pts[0].x,h);ctx.closePath();
-  ctx.fillStyle='rgba(24,213,255,.07)';ctx.fill();
-  // line
-  var gr=ctx.createLinearGradient(0,0,w,0);gr.addColorStop(0,color);gr.addColorStop(1,'rgba(106,92,255,.7)');
-  ctx.beginPath();pts.forEach(function(pt,i){i?ctx.lineTo(pt.x,pt.y):ctx.moveTo(pt.x,pt.y);});
-  ctx.strokeStyle=gr;ctx.lineWidth=1.8;ctx.lineJoin='round';ctx.stroke();
-  // end dot
-  var lp=pts[pts.length-1];ctx.beginPath();ctx.arc(lp.x,lp.y,2.5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
-}
-var bio=new IntersectionObserver(function(es){es.forEach(function(e){
-  if(!e.isIntersecting)return;
-  // KPI counters
-  e.target.querySelectorAll('.bi-kpi-val[data-count]').forEach(function(el,i){
-    var target=parseFloat(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'',isF=target%1!==0;
-    setTimeout(function(){var n=0,inc=target/45,t=setInterval(function(){n+=inc;if(n>=target){n=target;clearInterval(t);}el.textContent=pre+(isF?n.toFixed(1):Math.round(n))+suf;},25);},i*100);
-  });
-  // Sparklines (drawn after counter starts)
-  setTimeout(function(){
-    biSpark('ks1',[54,62,68,75,80,85,90,95,100,102],'#18D5FF');
-    biSpark('ks2',[0.5,0.9,1.3,1.7,2.0,2.3,2.6,2.8,3.0,3.1],'#00C9A7');
-    biSpark('ks3',[4.6,4.7,4.8,4.9,4.9,5.0,5.0,5.0,5.0,5.0],'#F5D87A');
-    biSpark('ks4',[2,3,4,5,5,6,6,7,7,8],'#4ADE80');
-  },200);
-  // Bar chart, delivery bars & donut now render correctly by default (inline styles)
-  // — add a subtle "grow-in" replay on scroll for polish only
-  e.target.querySelectorAll('.bi-bar-fill,.bi-ml-fill').forEach(function(fill,i){
-    var w=fill.style.width;
-    fill.style.transition='none';fill.style.width='0%';
-    setTimeout(function(){fill.style.transition='width 1.1s cubic-bezier(.2,.7,.3,1)';fill.style.width=w;},i*90+250);
-  });
-  bio.unobserve(e.target);
-})},{threshold:.15});
-var biEl=document.querySelector('.bi-report');if(biEl)bio.observe(biEl);
 </script>
 </body>
 </html>
